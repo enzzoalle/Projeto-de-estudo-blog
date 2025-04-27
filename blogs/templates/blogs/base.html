@@ -10,14 +10,55 @@
             <meta name="keywords" content="Blog, artigos, academico, noticias academicas, materiais academicos" />
             <link href="{% static 'css/bootstrap.min.css' %}" type="text/css" media="all" rel="stylesheet" />
             <link href="{% static 'css/style.css' %}" type="text/css" media="all" rel="stylesheet" />
-            <title>Blog</title>
+            <title>Já aluguei!</title>
             <link rel="icon" href="{% static 'img/icon.ico' %}" type="image/x-icon" />
       </head>
       <body>
             <header>
-                  <nav></nav>
+                  <nav class="navbar navbar-expand-lg bg-primary bg-gradient fixed-top">
+                        <div class="container">
+                              <a class="navbar-brand" href="{% url 'index' %}">
+                                    <img src="{% static 'img/icon.ico' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
+                                    Já aluguei!
+                              </a>
+                              <button
+                                    class="navbar-toggler"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#navbarSupportedContent"
+                                    aria-controls="navbarSupportedContent"
+                                    aria-expanded="false"
+                                    aria-label="Toggle navigation"
+                              >
+                                    <span class="navbar-toggler-icon"></span>
+                              </button>
+                              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                          <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" href="{% url 'index' %}">Home</a>
+                                          </li>
+                                          <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" href="{% url 'posts' %}">Posts</a>
+                                          </li>
+                                          <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" href="#">Alterar senha</a>
+                                          </li>
+                                          <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" href="#">Entrar</a>
+                                          </li>
+                                          <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" href="#">Sair</a>
+                                          </li>
+                                    </ul>
+                                    <form class="d-flex" role="search">
+                                          <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" />
+                                          <button class="btn btn-success" type="submit">Pesquisar</button>
+                                    </form>
+                              </div>
+                        </div>
+                  </nav>
             </header>
-            {% block content %} {% endblock %}
+            <div id="div-block-content" class="container">{% block content %} {% endblock %}</div>
             <script src="{% static 'js/bootstrap.min.js' %}"></script>
       </body>
 </html>

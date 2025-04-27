@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from .models import Post, Comentario
 
 def index(request):
-
-     context = {'teste': 'Esse é um teste para verificar se as variáveis de contexto funcionam.'}
+     post = Post.objects.order_by('-data_post').first()
+     comentarios = Comentario.objects.filter(post=post)
+     context = {'post':post, 'comentarios':comentarios}
      return render(request, 'blogs/index.html', context)
 
 def post_unique(request):
