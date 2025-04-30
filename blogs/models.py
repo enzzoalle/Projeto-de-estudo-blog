@@ -17,7 +17,7 @@ class Comentario(models.Model):
      titulo = models.CharField(max_length=55)
      conteudo = models.TextField(max_length=1000)
      data_post = models.DateTimeField(auto_now_add=True)
-     autor = models.ForeignKey(User, on_delete=models.SET_NULL, null=True) # para quando o autor for deletado, os comentarios permaneçam, mas com autor 'nulo'
+     autor = models.ForeignKey(User, on_delete=models.SET_NULL, null=True) # para quando o autor for deletado, os comentarios permaneçam
      post = models.ForeignKey(Post, on_delete=models.CASCADE)
 
      def __str__(self):
