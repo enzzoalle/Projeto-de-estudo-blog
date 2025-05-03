@@ -12,6 +12,7 @@ class Post(models.Model):
      def __str__(self):
          return "Título: " + self.titulo + " | Autor: " + self.autor.first_name + " " + self.autor.last_name
      
+
 class Comentario(models.Model):
      """Modelo de comentários"""
      titulo = models.CharField(max_length=55)
@@ -21,4 +22,4 @@ class Comentario(models.Model):
      post = models.ForeignKey(Post, on_delete=models.CASCADE)
 
      def __str__(self):
-         return "Título: " + self.titulo + " | Autor: " + self.autor.first_name + " " + self.autor.last_name + " | Post: " + self.post.titulo
+         return "Título: " + self.titulo + " | Autor: " + self.autor.username + " | Post: " + self.post.titulo

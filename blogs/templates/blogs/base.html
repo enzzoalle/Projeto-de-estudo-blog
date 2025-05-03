@@ -38,7 +38,7 @@
                                                 <a class="nav-link" aria-current="page" href="{% url 'index' %}">Home</a>
                                           </li>
                                           <li class="nav-item">
-                                                <a class="nav-link" aria-current="page" href="{% url 'posts' %}">Posts</a>
+                                                <a class="nav-link" aria-current="page" href="{% url 'posts' %}?page=1">Posts</a>
                                           </li>
                                           <li class="nav-item">
                                                 <a class="nav-link" aria-current="page" href="#">Entrar</a>
@@ -53,8 +53,10 @@
                                                 <a class="nav-link" aria-current="page" href="#">Sair</a>
                                           </li>
                                     </ul>
-                                    <form class="d-flex" role="search">
-                                          <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" />
+
+                                    <form method="post" class="d-flex" role="search" action="{% url 'search' %}">
+                                          {% csrf_token %}
+                                          <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" name="busca" />
                                           <button class="btn btn-success" type="submit">Pesquisar</button>
                                     </form>
                               </div>

@@ -1,1 +1,28 @@
-{% extends 'blogs/base.html' %} {% block content %} {{ teste }} {% endblock %}
+{% extends 'blogs/base.html' %} {% block content %} {% if posts %}
+<div class="row justify-content-md-center">
+      {% for post in posts %}
+      <div class="card mb-3 col-12 col-md-10">
+            <div class="row g-0">
+                  <div class="col-md-4">
+                        <img src="{{ post.imagem_capa.url }}" class="img-fluid rounded" alt="{{ post.titulo }}" style="height: 100%" />
+                  </div>
+                  <div class="col-md-8">
+                        <div class="card-body">
+                              <h5 class="card-title">{{ post.titulo }}</h5>
+                              <p class="card-text">
+                                    {{ post.conteudo | slice:":170" }}...
+                                    <a href="{% url 'post_unique' id=post.id %}">Ler mais</a>
+                              </p>
+                              <p class="card-text">
+                                    <small class="text-body-secondary">Postado em {{ post.data_post }}h por {{ post.autor.first_name }} {{ post.autor.last_name }}</small>
+                              </p>
+                        </div>
+                  </div>
+            </div>
+      </div>
+      {% endfor %}
+</div>
+
+{% else %}
+<h4>Ainda não há posts!</h4>
+{% endif %} {% endblock %}

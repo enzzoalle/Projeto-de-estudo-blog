@@ -10,7 +10,8 @@ SECRET_KEY = os.environ.get('KEY_MY_DJANGO')
 
 DEBUG = os.getenv('STATUS_DEBUG', 'False').lower() in ['true', '1', 't']
 
-ALLOWED_HOSTS = [os.environ.get('HOST_ALLOWED')]
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -54,12 +55,12 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('NAME_DB'),
         'USER': os.environ.get('USER_DB'),
         'PASSWORD': os.environ.get('PASS_DB'),
-        'HOST': os.environ.get('HOST_DB'),
-        'PORT': '3307',
+        'HOST': os.environ.get('ALLOWED_HOSTS'),
+        'PORT': os.environ.get('PORT_DB'),
     }
 }
 
