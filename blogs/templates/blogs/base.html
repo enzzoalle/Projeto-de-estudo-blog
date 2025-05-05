@@ -40,20 +40,22 @@
                                           <li class="nav-item">
                                                 <a class="nav-link" aria-current="page" href="{% url 'posts' %}?page=1">Posts</a>
                                           </li>
-                                          <li class="nav-item">
-                                                <a class="nav-link" aria-current="page" href="#">Entrar</a>
-                                          </li>
-                                          <li class="nav-item">
-                                                <a class="nav-link" aria-current="page" href="#">Registrar</a>
-                                          </li>
+                                          {% if user.is_authenticated %}
                                           <li class="nav-item">
                                                 <a class="nav-link" aria-current="page" href="#">Alterar senha</a>
                                           </li>
                                           <li class="nav-item">
                                                 <a class="nav-link" aria-current="page" href="#">Sair</a>
                                           </li>
+                                          {% else %}
+                                          <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" href="#">Entrar</a>
+                                          </li>
+                                          <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" href="{% url 'register_user' %}">Registrar</a>
+                                          </li>
+                                          {% endif %}
                                     </ul>
-
                                     <form method="post" class="d-flex" role="search" action="{% url 'search' %}">
                                           {% csrf_token %}
                                           <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" name="busca" />
