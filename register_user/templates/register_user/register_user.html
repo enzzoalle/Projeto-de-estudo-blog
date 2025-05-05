@@ -1,7 +1,26 @@
-{% extends 'blogs/base.html' %}
+{% extends 'blogs/base.html' %} {% block content %}
 
-{% block content %}
-
-Register user
+<div class="col-12 row justify-content-center">
+      <h2 class="text-center">Faça seu cadastro</h2>
+      <form class="shadow p-4 col-10 col-lg-6">
+            <div class="mb-3">
+                  <label for="cadastro_user_username" class="form-label">Usuário:</label>
+                  <input class="form-control" type="text" aria-label="cadastro_user_username" />
+            </div>
+            <div class="mb-3">
+                  <label for="cadastro_user_email" class="form-label">Email:</label>
+                  <input type="email" class="form-control" id="cadastro_user_email" aria-describedby="emailHelp" />
+            </div>
+            <div class="mb-3">
+                  <label for="cadastro_user_password1" class="form-label">Digite sua senha:</label>
+                  <input type="password" class="form-control" id="cadastro_user_password1" />
+            </div>
+            <div class="mb-3">
+                  <label for="cadastro_user_password2" class="form-label">Repita a senha:</label>
+                  <input type="password" class="form-control" id="cadastro_user_password2" />
+            </div>
+            <button type="submit" class="form-control btn btn-primary">Cadastrar</button>
+      </form>
+</div>
 
 {% endblock %}
