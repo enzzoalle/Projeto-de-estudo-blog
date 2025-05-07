@@ -23,6 +23,8 @@ INSTALLED_APPS = [
     'blogs',
     'register_user',
     'authenticate',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -110,3 +112,13 @@ EMAIL_PORT = int(os.environ.get('MY_EMAIL_PORT'))
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('MY_EMAIL')
 EMAIL_HOST_PASSWORD = os.environ.get('MY_EMAIL_PASS')
+
+#configurações do CKEditor
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}

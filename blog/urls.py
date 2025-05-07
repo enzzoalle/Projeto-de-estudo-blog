@@ -8,6 +8,7 @@ urlpatterns = [
     path('', include('blogs.urls')),
     path('register/', include('register_user.urls')),
     path('authenticate/', include('authenticate.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 if settings.DEBUG:
