@@ -17,17 +17,17 @@
           {% endif %}
 
           <div class="mb-3">
-               <label for="cadastro_user_login" class="form-label">Login</label>
+               <label for="cadastro_user_login" class="form-label">Login:</label>
                {{ form.login }}
           </div>
 
           <div class="mb-3">
-               <label for="cadastro_user_password" class="form-label">Senha</label>
+               <label for="cadastro_user_password" class="form-label">Senha:</label>
                {{ form.password }}
           </div>
 
           <button type="submit" class="form-control btn btn-primary mb-3">Entrar</button>
-          <span>Esqueceu sua senha? <a href="{% url 'reset_password' %}">Clique aqui</a></span>
+          <span> <a href="{% url 'reset_password' %}">Esqueci minha senha</a></span>
      </form>
 </div>
 

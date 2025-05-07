@@ -8,6 +8,9 @@ from django.utils import timezone
 
 def register_user(request):
 
+     if request.user.is_authenticated:
+          return redirect('index')
+
      if request.method == 'POST':
           form = RegisterForm(request.POST)
 

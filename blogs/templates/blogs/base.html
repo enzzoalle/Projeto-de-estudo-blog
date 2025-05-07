@@ -45,11 +45,11 @@
                                                 <a class="nav-link" aria-current="page" href="{% url 'reset_password' %}">Alterar senha</a>
                                           </li>
                                           <li class="nav-item">
-                                                <a class="nav-link" aria-current="page" href="#">Sair</a>
+                                                <a class="nav-link" aria-current="page" href="{% url 'logout_view' %}">Sair</a>
                                           </li>
                                           {% else %}
                                           <li class="nav-item">
-                                                <a class="nav-link" aria-current="page" href="#">Entrar</a>
+                                                <a class="nav-link" aria-current="page" href="{% url 'login_view' %}">Entrar</a>
                                           </li>
                                           <li class="nav-item">
                                                 <a class="nav-link" aria-current="page" href="{% url 'register_user' %}">Registrar</a>

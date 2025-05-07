@@ -3,7 +3,7 @@ from django import forms
 class LoginForm(forms.Form):
 
      login = forms.CharField(
-          max_length=15,
+          max_length=35,
           widget=forms.TextInput(attrs={
                'placeholder':'Digite o email ou o usuário:',
                'id':'cadastro_user_login',
