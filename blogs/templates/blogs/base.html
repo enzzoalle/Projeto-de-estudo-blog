@@ -10,6 +10,7 @@
             <meta name="keywords" content="Blog, artigos, academico, noticias academicas, materiais academicos" />
             <link href="{% static 'css/bootstrap.min.css' %}" type="text/css" media="all" rel="stylesheet" />
             <link href="{% static 'css/style.css' %}" type="text/css" media="all" rel="stylesheet" />
+            <script async charset="utf-8" src="//cdn.embedly.com/widgets/platform.js"></script>
             <title>Já aluguei!</title>
             <link rel="icon" href="{% static 'img/icon.ico' %}" type="image/x-icon" />
       </head>
@@ -67,5 +68,15 @@
             </header>
             <div id="div-block-content" class="container">{% block content %} {% endblock %}</div>
             <script src="{% static 'js/bootstrap.min.js' %}"></script>
+            <script>
+                  document.querySelectorAll( 'oembed[url]' ).forEach( element => {
+                      const anchor = document.createElement( 'a' );
+              
+                      anchor.setAttribute( 'href', element.getAttribute( 'url' ) );
+                      anchor.className = 'embedly-card';
+              
+                      element.appendChild( anchor );
+                  } );
+              </script>
       </body>
 </html>
